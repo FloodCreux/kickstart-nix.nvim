@@ -3,9 +3,8 @@ local fn = vim.fn
 local opt = vim.o
 local g = vim.g
 
--- <leader> key. Defaults to `\`. Some people prefer space.
--- g.mapleader = ' '
--- g.maplocalleader = ' '
+g.mapleader = ' '
+g.maplocalleader = ' '
 
 opt.compatible = false
 
@@ -21,11 +20,10 @@ opt.path = vim.o.path .. '**'
 
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = true
 opt.lazyredraw = true
 opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
-opt.hlsearch = true
+opt.hlsearch = false
 
 opt.spell = true
 opt.spelllang = 'en'
@@ -41,6 +39,7 @@ opt.undofile = true
 opt.splitright = true
 opt.splitbelow = true
 opt.cmdheight = 0
+opt.wrap = false
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
@@ -100,6 +99,7 @@ vim.diagnostic.config {
 g.editorconfig = true
 
 vim.opt.colorcolumn = '100'
+vim.opt.clipboard.register = "unnamedplus"
 
 -- Native plugins
 cmd.filetype('plugin', 'indent', 'on')
